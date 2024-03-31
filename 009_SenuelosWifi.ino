@@ -25,7 +25,20 @@ String ssid6 = "Red no segura      ";
 String ssid7 = "Red no segura       ";
 String ssid8 = "Red no segura        ";
 String ssid9 = "Red no segura         ";
+
+String AS_ssid  = "ASUSRTX5G";
+String AS_ssid1 = "ASUSRTX5G ";
+String AS_ssid2 = "ASUSRTX5G  ";
+String AS_ssid3 = "ASUSRTX5G   ";
+String AS_ssid4 = "ASUSRTX5G    ";
+String AS_ssid5 = "ASUSRTX5G     ";
+String AS_ssid6 = "ASUSRTX5G      ";
+String AS_ssid7 = "ASUSRTX5G       ";
+String AS_ssid8 = "ASUSRTX5G        ";
+String AS_ssid9 = "ASUSRTX5G         ";
+
 int ssid_sel=0;
+int ssid_sel_1=0;
 byte channel;
 
 uint8_t packet[128] = { 0x80, 0x00, 0x00, 0x00, 
@@ -199,97 +212,141 @@ void loop() {
       case 0:
         //Serial.println ("SSID");
         for (int i = 0; i<SSID_SIZE; i++){
-              packet[38+i] =  ssid[i];
-              wifi_send_pkt_freedom(packet, 51 + SSID_SIZE + ssid_sel, 0);
-              wifi_send_pkt_freedom(packet, 51 + SSID_SIZE + ssid_sel, 0);
-              wifi_send_pkt_freedom(packet, 51 + SSID_SIZE + ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid[i];
+          }
+          wifi_send_pkt_freedom(packet, 51 + SSID_SIZE + ssid_sel, 0);
+          wifi_send_pkt_freedom(packet, 51 + SSID_SIZE + ssid_sel, 0);
+          wifi_send_pkt_freedom(packet, 51 + SSID_SIZE + ssid_sel, 0);
         }
         break;
       case 1:
         //Serial.println ("SSID 1");
         for (int i = 0; i<SSID_SIZE1; i++){
-            packet1[38+i] =  ssid1[i];
-            wifi_send_pkt_freedom(packet1, 51 + SSID_SIZE + ssid_sel, 0);
-            wifi_send_pkt_freedom(packet1, 51 + SSID_SIZE + ssid_sel, 0);
-            wifi_send_pkt_freedom(packet1, 51 + SSID_SIZE + ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid1[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid1[i];
+          }
+          wifi_send_pkt_freedom(packet1, 51 + SSID_SIZE + ssid_sel, 0);
+          wifi_send_pkt_freedom(packet1, 51 + SSID_SIZE + ssid_sel, 0);
+          wifi_send_pkt_freedom(packet1, 51 + SSID_SIZE + ssid_sel, 0);
         }
         break;
       case 2:
         //Serial.println ("SSID 2");
         for (int i = 0; i<SSID_SIZE2; i++){
-            packet2[38+i] =  ssid2[i];
-            wifi_send_pkt_freedom(packet2, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet2, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet2, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid2[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid2[i];
+          }
+          wifi_send_pkt_freedom(packet2, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet2, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet2, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
       case 3:
         //Serial.println ("SSID 3");
         for (int i = 0; i<SSID_SIZE3; i++){
-            packet3[38+i] =  ssid3[i];
-            wifi_send_pkt_freedom(packet3, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet3, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet3, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid3[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid3[i];
+          }
+          wifi_send_pkt_freedom(packet3, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet3, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet3, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
       case 4:
         //Serial.println ("SSID 4");
         for (int i = 0; i<SSID_SIZE4; i++){
-            packet4[38+i] =  ssid4[i];
-            wifi_send_pkt_freedom(packet4, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet4, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet4, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid4[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid4[i];
+          }
+          wifi_send_pkt_freedom(packet4, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet4, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet4, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
       case 5:
         //Serial.println ("SSID 5");
         for (int i = 0; i<SSID_SIZE5; i++){
-            packet5[38+i] =  ssid5[i];
-            wifi_send_pkt_freedom(packet5, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet5, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet5, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid5[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid5[i];
+          }
+          wifi_send_pkt_freedom(packet5, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet5, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet5, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
       case 6:
         //Serial.println ("SSID 6");
         for (int i = 0; i<SSID_SIZE6; i++){
-            packet6[38+i] =  ssid6[i];
-            wifi_send_pkt_freedom(packet6, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet6, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet6, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid6[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid6[i];
+          }
+          wifi_send_pkt_freedom(packet6, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet6, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet6, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
       case 7:
         //Serial.println ("SSID 7");
         for (int i = 0; i<SSID_SIZE7; i++){
-            packet7[38+i] =  ssid7[i];
-            wifi_send_pkt_freedom(packet7, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet7, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet7, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid7[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid7[i];
+          }
+          wifi_send_pkt_freedom(packet7, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet7, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet7, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
       case 8:
         //Serial.println ("SSID 8");
         for (int i = 0; i<SSID_SIZE8; i++){
-            packet8[38+i] =  ssid8[i];
-            wifi_send_pkt_freedom(packet8, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet8, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet8, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid8[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid8[i];
+          }
+          wifi_send_pkt_freedom(packet8, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet8, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet8, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
       case 9:
         //Serial.println ("SSID 9");
         for (int i = 0; i<SSID_SIZE9; i++){
-            packet9[38+i] =  ssid9[i];
-            wifi_send_pkt_freedom(packet9, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet9, 51 + SSID_SIZE+ ssid_sel, 0);
-            wifi_send_pkt_freedom(packet9, 51 + SSID_SIZE+ ssid_sel, 0);
+          if(ssid_sel_1 == 0){
+            packet[38+i] =  ssid9[i];
+          }else if(ssid_sel_1 == 1){
+            packet[38+i] =  AS_ssid9[i];
+          }
+          wifi_send_pkt_freedom(packet9, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet9, 51 + SSID_SIZE+ ssid_sel, 0);
+          wifi_send_pkt_freedom(packet9, 51 + SSID_SIZE+ ssid_sel, 0);
         }
         break;
     }
     ssid_sel++;
+    ssid_sel_1++;
     if ( ssid_sel == 10 ){
       ssid_sel = 0;
+    }
+    if ( ssid_sel_1 == 2 ){
+      ssid_sel_1 = 0;
     }
     
     packet[56] = channel;
